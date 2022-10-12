@@ -1,0 +1,91 @@
+<!-- webpage fi with loading spinner and basic redirect information -->
+
+<!DOCTYPE html>
+<head>
+  <!-- best practice to include where user is being redirected -->
+  <title>Redirecting to _______ page...</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- destination of redirect -->
+  <meta http-equiv="Refresh" content="2; url=https://terrabyte.eco">
+
+
+  <style>
+    /* css reset */
+    *{
+      margin:0;
+      padding:0;
+    }
+    body{
+      display:flex;
+      width:100vw;
+      height:100vh;
+      overflow:hidden;
+      align-items:center;
+      justify-content:center;
+      line-height:1.5;
+      font-size:12px;
+      font-family:sans-serif;
+      background-color:#333333;
+    }
+    .content-container{
+      color:white;
+      max-width:600px;
+      margin:0 auto;
+      padding:20px;
+    }
+
+    /* loading animation styles */
+    .loading-container{
+      margin-bottom:30px;
+      display:flex;
+      justify-content: center;
+      /* align-items:center; */
+    }
+    .loading-spinner{
+      border:5px solid #666666;
+      /* accent color */
+      border-top-color:currentColor;
+      border-radius:50%;
+      width:30px;
+      height:30px;
+      position:relative;
+      transform:rotate(0deg);
+      animation:loadSpin .85s ease infinite;
+    }
+    @keyframes loadSpin{
+      0%{
+        transform:rotate(0deg)
+      }
+      100%{
+        transform:rotate(360deg);
+      }
+    }
+
+    /* text beneath styles */
+    a{
+      color:currentColor;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="content-container">
+
+    <!-- loading animation -->
+    <div class="loading-container">
+      <!--  -->
+      <!-- <p>loading spinner here</p> -->
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- text below -->
+    <div class="text-container">
+      <p>You are being redirected to <span>[redirectedPage]</span>.</p>
+      <p>Not working? Click <a href="https://terrabyte.eco">here</a> to redirect immediately.</p>
+    </div>
+
+  </div>
+</body>
+</html>
